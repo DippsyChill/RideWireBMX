@@ -1,0 +1,21 @@
+﻿# Project change history. Add one entry for each meaningful implementation change.
+# Use areas to indicate frontend, backend, infrastructure, or documentation impact.
+# Use location to record the page, route, screen, service, or module affected.
+version: 1
+project: RideWireBMX
+entries:
+  - id: RW-0001
+    date: "2026-10-24"
+    type: documentation
+    title: "Create project change log"
+    summary: "Add a structured log for tracking changes and their site locations across frontend and backend."
+    areas:
+      - documentation
+    location:
+      site: "Project-wide"
+      page: null
+      route: null
+      component: null
+      service: null
+    files:
+      - ChangeLog.YAML
