@@ -19,3 +19,25 @@ entries:
       service: null
     files:
       - ChangeLog.YAML
+
+  - id: RW-0002
+    date: "2026-10-24"
+    type: feature
+    title: "Build the RideWireBMX homepage"
+    summary: "Create a responsive static landing page with original BMX artwork, mobile navigation, and IONOS upload guidance."
+    areas:
+      - frontend
+      - documentation
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Header navigation, hero, story, scene cards, closing call-to-action, footer"
+      service: null
+    files:
+      - index.html
+      - styles.css
+      - script.js
+      - assets/ridewire-hero.png
+      - README.md
+      - ChangeLog.YAML
