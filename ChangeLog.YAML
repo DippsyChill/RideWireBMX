@@ -1024,3 +1024,89 @@ entries:
       - preview-server.js
       - README.md
       - ChangeLog.YAML
+
+  - id: RW-0050
+    date: "2026-10-25"
+    type: frontend
+    title: "Add Portugal BMX news and Parque da Juventude photo history"
+    summary: "Publish RideWire reports on the return of Portugal's BMX Freestyle circuit and Clube Bicross de Portimao's 2026 Race Cup team title. Add sourced photos and a dated 1996, 2010 and 2025 Parque da Juventude timeline."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/articles/news/news-portugal-bmx-freestyle-returns-2026.html, /articles/news/news-portimao-bmx-race-cup-2026.html"
+      component: "Portugal BMX reports, listing cards and park photo timeline"
+    files:
+      - Pages/news.html
+      - articles/news/news-portugal-bmx-freestyle-returns-2026.html
+      - articles/news/news-portimao-bmx-race-cup-2026.html
+      - assets/news/portugal-bmx-freestyle-torres-vedras-2026.jpg
+      - assets/news/portimao-cbp-taca-portugal-2026.jpg
+      - assets/news/portimao-bmx-big-contest-1996.jpg
+      - assets/news/portimao-rebel-jam-2010.webp
+      - assets/news/portimao-municipal-park-2025.jpg
+      - styles.css
+      - ChangeLog.YAML
+
+
+  - id: RW-0051
+    date: "2026-10-25"
+    type: frontend
+    title: "Publish Portimao BMX park and scene history feature"
+    summary: "Add a personal, source-led feature tracing Portimao BMX from pre-park events and the 1996 opening through the 1998 Worlds, 2010 Rebel Jam, missing-ramp period, street riding and the 2025 rebuild. Add credited archive photos and cross-links from News and the Portugal Freestyle report."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News article"
+      route: "/articles/news/news-portimao-bmx-park-history.html"
+      component: "Portimao BMX history feature, photo archive and news card"
+    files:
+      - Pages/news.html
+      - articles/news/news-portimao-bmx-park-history.html
+      - articles/news/news-portugal-bmx-freestyle-returns-2026.html
+      - assets/news/portimao-air-ground-masters-1995.jpg
+      - assets/news/portimao-mat-hoffman-1998.jpg
+      - assets/news/portimao-mat-hoffman-1998-portrait.jpg
+      - assets/news/portimao-bmx-worlds-1998.jpg
+      - styles.css
+      - ChangeLog.YAML
+
+
+  - id: RW-0052
+    date: "2026-10-25"
+    type: frontend
+    title: "Add the editor's BMX Summer Comp 2005 memory"
+    summary: "Expand the Portimao history article with the editor's first-ramp memory, friends for life, the supplied BMX Summer Comp 2005 logo and the user's YouTube video."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Portimao BMX history article"
+      route: "/articles/news/news-portimao-bmx-park-history.html"
+      component: "2005 personal memory, event logo and video embed"
+    files:
+      - articles/news/news-portimao-bmx-park-history.html
+      - assets/news/bmx-summer-comp-2005-logo.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0053
+    date: "2026-10-25"
+    type: frontend
+    title: "Add Portimao Rebel Jam skatepark build video"
+    summary: "Embed the editor-supplied Vimeo footage of the Rebel Jam park build and add the editor's recollection about being woken by a homemade flamethrower."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Portimao BMX history article"
+      route: "/articles/news/news-portimao-bmx-park-history.html"
+      component: "2010 Rebel Jam park build video and editor memory"
+    files:
+      - articles/news/news-portimao-bmx-park-history.html
+      - ChangeLog.YAML
