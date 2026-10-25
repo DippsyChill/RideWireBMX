@@ -1,10 +1,11 @@
-﻿const http = require("node:http");
+const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 
 const root = __dirname;
 const port = Number(process.env.PORT || 8000);
-const allowedRootFiles = new Set(["index.html", "news.html", "spotlight.html", "privacy.html", "terms.html", "cookies.html", "videos.html", "riders.html", "about.html", "styles.css", "script.js"]);
+const allowedRootFiles = new Set(["index.html"]);
+const allowedPageFiles = new Set(["index.html", "news.html", "spotlight.html", "privacy.html", "terms.html", "cookies.html", "videos.html", "riders.html", "about.html"]);
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -27,7 +28,8 @@ http.createServer((request, response) => {
   const filePath = path.resolve(root, `.${pathname}`);
   const relativePath = path.relative(root, filePath);
   const isArticleFile = /^articles[\\/](news|spotlight)[\\/][^\\/]+\.html$/i.test(relativePath);
-  const isAllowed = allowedRootFiles.has(relativePath) || isArticleFile || relativePath.startsWith(`assets${path.sep}`);
+  const isPageFile = relativePath.startsWith(`Pages${path.sep}`) && allowedPageFiles.has(path.basename(relativePath));
+  const isAllowed = allowedRootFiles.has(relativePath) || isPageFile || isArticleFile || relativePath.startsWith(`assets${path.sep}`);
 
   if (!isAllowed || relativePath.startsWith("..")) {
     response.writeHead(404).end("Not found");

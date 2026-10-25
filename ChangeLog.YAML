@@ -1003,3 +1003,24 @@ entries:
       - preview-server.js
       - README.md
       - ChangeLog.YAML
+
+  - id: RW-0049
+    date: "2026-10-25"
+    type: maintenance
+    title: "Group main pages in Pages folder"
+    summary: "Move the main site pages into Pages, retain a root entry page for IONOS hosting, and update internal links, preview routing and project documentation."
+    areas:
+      - frontend
+      - maintenance
+    location:
+      site: "RideWireBMX repository"
+      page: "Main site pages"
+      route: "/Pages/"
+      component: "Page organization and local navigation"
+    files:
+      - Pages/
+      - index.html
+      - articles/
+      - preview-server.js
+      - README.md
+      - ChangeLog.YAML
