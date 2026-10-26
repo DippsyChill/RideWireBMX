@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
 const port = Number(process.env.PORT || 8000);
+const host = process.env.HOST || '0.0.0.0';
 const pageNames = new Set(['index.html','news.html','spotlight.html','privacy.html','terms.html','cookies.html','videos.html','riders.html','about.html']);
 const aliases = new Map([...pageNames].map(name => [`/${name}`, `/Pages/${name}`]));
 const mimeTypes = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml'};
@@ -26,5 +27,5 @@ function httpServer() {
       if (error) { response.writeHead(404).end('Not found'); return; }
       response.writeHead(200,{'Content-Type':mimeTypes[path.extname(filePath).toLowerCase()] || 'application/octet-stream','Cache-Control':'no-store'}).end(contents);
     });
-  }).listen(port,'127.0.0.1',()=>console.log(`RideWireBMX preview: http://127.0.0.1:${port}`));
+  }).listen(port,host,()=>console.log(`RideWireBMX preview: http://${host}:${port}`));
 }
