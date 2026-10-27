@@ -1338,4 +1338,31 @@ entries:
       component: "Creator and editor story"
     files:
       - Pages/about.html
+      - ChangeLog.YAML  - id: RW-0066
+    date: "2026-10-27"
+    type: backend
+    title: "Add lightweight Admin and Editor access with local PHP testing"
+    summary: "Add PHP staff sign-in, Owner bootstrap, Admin and Editor permissions, first-sign-in password changes, login throttling, an audit log, and SQLite localhost support alongside IONOS MariaDB. No media uploads, visitor accounts, analytics, or external service integration."
+    areas:
+      - backend
+      - security
+      - local-development
+      - documentation
+    location:
+      site: "RideWire staff area"
+      page: "Staff sign-in and permissions"
+      route: "/staff/"
+      component: "Owner, Admin and Editor account controls"
+      service: "PHP with SQLite locally and MariaDB on IONOS"
+    files:
+      - staff/
+      - private/config.example.php
+      - private/config.local.example.php
+      - private/.htaccess
+      - bin/create-owner.php
+      - bin/.htaccess
+      - database/staff-schema.sql
+      - scripts/start-local-backend.ps1
+      - .gitignore
+      - README.md
       - ChangeLog.YAML
