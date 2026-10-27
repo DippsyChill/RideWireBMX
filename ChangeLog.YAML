@@ -1247,3 +1247,23 @@ entries:
     files:
       - HANDOFF-2026-10-27.md
       - ChangeLog.YAML
+
+  - id: RW-0061
+    date: "2026-10-27"
+    type: frontend
+    title: "Give News a consistent editorial card rhythm"
+    summary: "Arrange News stories in a repeating sequence of two compact cards followed by one full-width feature. Keep the sequence responsive to the active discipline filter and improve touch target size for filter buttons."
+    areas:
+      - frontend
+      - accessibility
+      - content-display
+    location:
+      site: "Public website"
+      page: "News"
+      route: "/news.html"
+      component: "News card grid and discipline filters"
+    files:
+      - Pages/news.html
+      - styles.css
+      - script.js
+      - ChangeLog.YAML

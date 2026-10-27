@@ -22,11 +22,24 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 
 const newsFilterButtons = document.querySelectorAll("[data-news-filter]");
 const newsCategoryCards = document.querySelectorAll("[data-news-category]");
+const updateNewsCardRhythm = () => {
+  let visibleIndex = 0;
+  newsCategoryCards.forEach((card) => {
+    if (card.hidden) {
+      card.classList.remove("scene-news-card-featured");
+      return;
+    }
+    visibleIndex += 1;
+    card.classList.toggle("scene-news-card-featured", visibleIndex % 3 === 0);
+  });
+};
 newsFilterButtons.forEach((button) => button.addEventListener("click", () => {
   const filter = button.dataset.newsFilter;
   newsFilterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
   newsCategoryCards.forEach((card) => { card.hidden = filter !== "all" && card.dataset.newsCategory !== filter; });
+  updateNewsCardRhythm();
 }));
+updateNewsCardRhythm();
 
 const spotlightDialog = document.querySelector("#spotlight-dialog");
 const spotlightOpenButtons = document.querySelectorAll("[data-open-spotlight]");
