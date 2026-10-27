@@ -997,7 +997,6 @@ entries:
       component: "Article storage and relative asset links"
     files:
       - articles/news/
-      - articles/spotlight/
       - news.html
       - spotlight.html
       - preview-server.js
@@ -1211,7 +1210,6 @@ entries:
       - Pages/terms.html
       - Pages/cookies.html
       - articles/news/
-      - articles/spotlight/
       - ChangeLog.YAML
 
   - id: RW-0059
@@ -1266,4 +1264,78 @@ entries:
       - Pages/news.html
       - styles.css
       - script.js
+      - ChangeLog.YAML
+
+  - id: RW-0062
+    date: "2026-10-27"
+    type: frontend
+    title: "Repeat the red ticker banner across public pages"
+    summary: "Reuse the Home page ticker beneath the opening intro on public main pages and News articles, leaving the Home ticker single and omitting individual Spotlight stories. Disable ticker motion for visitors who request reduced motion."
+    areas:
+      - frontend
+      - responsive-design
+      - accessibility
+    location:
+      site: "Public website"
+      page: "All public pages"
+      route: "Main pages and News articles"
+      component: "Shared red ticker banner"
+    files:
+      - Pages/
+      - articles/news/
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0063
+    date: "2026-10-27"
+    type: frontend
+    title: "Omit the red ticker from individual Spotlight stories"
+    summary: "Remove the site-wide ticker from the two individual Spotlight article pages while retaining it on the main Spotlight listing and other public pages."
+    areas:
+      - frontend
+      - content-display
+    location:
+      site: "Public website"
+      page: "Spotlight articles"
+      route: "/articles/spotlight/"
+      component: "Opening article banner"
+    files:
+      - articles/spotlight/spotlight-lucas-silva.html
+      - articles/spotlight/spotlight-alexandre-rodrigues.html
+      - ChangeLog.YAML
+
+  - id: RW-0064
+    date: "2026-10-27"
+    type: frontend
+    title: "Build out the RideWire About page"
+    summary: "Expand About into a clear overview of RideWire’s coverage and a first-person introduction to creator and editor Karl, including his Portimão BMX roots and a link to the park history story."
+    areas:
+      - frontend
+      - content
+      - responsive-design
+    location:
+      site: "Public website"
+      page: "About"
+      route: "/about.html"
+      component: "Mission, creator story, and editorial navigation"
+    files:
+      - Pages/about.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0065
+    date: "2026-10-27"
+    type: content
+    title: "Add Karl’s BMX riding story to About"
+    summary: "Replace the named rider list with the old CBP Crew and add Karl’s Portimão riding years, demos and competitions, general health setback, BMXAtitude inspiration, and present-day reason for creating RideWire."
+    areas:
+      - content
+      - frontend
+    location:
+      site: "Public website"
+      page: "About"
+      route: "/about.html"
+      component: "Creator and editor story"
+    files:
+      - Pages/about.html
       - ChangeLog.YAML

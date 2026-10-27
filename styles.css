@@ -131,6 +131,7 @@ em { color: #e50914; font-style: normal; }
   .ticker { padding-block: 13px; }
   .ticker-track { justify-content: flex-start; gap: 24px; animation: ticker 22s linear infinite; }
   @keyframes ticker { to { transform: translateX(-35%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none !important; transform: none !important; } }
   .section { padding-block: 76px; }
   .section-label { margin-bottom: 34px; }
   .intro-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -323,7 +324,18 @@ em { color: #e50914; font-style: normal; }
 .rider-profile-card .lead, .about-page-grid .lead { color: #555; font-size: 16px; line-height: 1.7; }
 .about-page-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 8vw, 120px); align-items: start; }
 .about-page-grid > div:last-child > p:not(.lead) { color: #626262; font-size: 14px; line-height: 1.85; }
-.about-page-grid .card-kicker { color: #e50914; }
+.about-page-grid .card-kicker { color: #e50914; }.about-editor-section { background: #fff; }
+.about-personal-detail { margin-top: 26px; padding: 18px 20px; border-left: 3px solid var(--lime); background: #f5f5f5; color: #3d3d3d; font-size: 13px; line-height: 1.8; }
+.about-personal-detail a { display: inline-flex; align-items: center; gap: 9px; margin-top: 8px; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.about-personal-detail a span { color: var(--lime); }
+.about-next-section { background: #111; color: #fff; }
+.about-next-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(32px, 7vw, 96px); }
+.about-next-grid h2 { margin: 0; font: 900 clamp(46px, 7vw, 82px)/.84 var(--display); letter-spacing: -.025em; }
+.about-next-grid h2 em { color: var(--lime); }
+.about-next-grid > div:last-child > p { max-width: 470px; color: #c7c7c7; font-size: 14px; line-height: 1.8; }
+.about-next-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.about-next-links .button { min-width: 0; min-height: 44px; }
+.about-next-links .button-dark { border: 1px solid #ffffff55; }
 .home-teaser-grid { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .home-teaser-grid h2 { margin: 0 0 14px; font: 800 clamp(42px, 6vw, 70px)/.88 var(--display); }
 .home-teaser-grid h2 em { color: var(--lime); }
@@ -335,6 +347,7 @@ em { color: #e50914; font-style: normal; }
  .news-article-aside { position: static; }
  .news-article-body .spotlight-article { padding: 28px 20px 32px; }
  .rider-profile-card, .about-page-grid { grid-template-columns: 1fr; }
+ .about-next-grid { grid-template-columns: 1fr; gap: 26px; }
  .rider-profile-card > img { min-height: 270px; max-height: 390px; }
  .home-teaser-grid { align-items: flex-start; flex-direction: column; }
 }
