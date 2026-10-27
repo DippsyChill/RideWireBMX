@@ -527,7 +527,7 @@ entries:
       page: "News and article pages"
       route: "/news.html and six new article routes"
       component: "News cards, editorial articles, photo credits, source links"
-      service: "X Games, FISE, Simple Session, Nitro Circus, AS Acción, The Boardr, Wikimedia Commons"
+      service: "X Games, FISE, Simple Session, Nitro Circus, AS AcciÃ³n, The Boardr, Wikimedia Commons"
     files:
       - news.html
       - news-fise-montpellier-2026.html
@@ -1109,4 +1109,141 @@ entries:
       component: "2010 Rebel Jam park build video and editor memory"
     files:
       - articles/news/news-portimao-bmx-park-history.html
+      - ChangeLog.YAML
+
+  - id: RW-0054
+    date: "2026-10-27"
+    type: frontend
+    title: "Reorder homepage around BMX news and archive feature"
+    summary: "Archive the previous homepage and lead the new flow with latest BMX Freestyle and Racing cards followed by the Portimao history feature, keeping the red ticker immediately below the hero and retaining Spotlight and Throwbacks further down."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/Pages/index.html"
+      component: "Hero, red ticker, latest news cards, Portimao archive feature, Spotlight and Throwbacks"
+    files:
+      - Pages/index.html
+      - styles.css
+      - archive/homepage/index-before-editorial-layout-2026-10-27.html
+      - ChangeLog.YAML
+
+  - id: RW-0055
+    date: "2026-10-27"
+    type: editorial
+    title: "Prepare unpublished BMX event drafts and coverage priorities"
+    summary: "Create a Coming Up folder with UCI BMX Racing Sarasota and BMX Freestyle Sakai article drafts, and a Worth Covering index of recent event stories already covered on the News page. Drafts remain unpublished and are not linked from public pages."
+    areas:
+      - content
+      - editorial
+    location:
+      site: "RideWireBMX repository"
+      page: "Editorial drafts"
+      route: "Not published"
+      component: "Coming Up and Worth Covering folders"
+    files:
+      - articles/drafts/README.md
+      - articles/drafts/coming-up/sarasota-world-cup-finale-2026.md
+      - articles/drafts/coming-up/sakai-freestyle-world-cup-2026.md
+      - ChangeLog.YAML
+
+  - id: RW-0056
+    date: "2026-10-27"
+    type: frontend
+    title: "Blend Home navigation into the hero image"
+    summary: "Add a transparent dark fade behind the Home page header so the hero image remains visible while the white logo and navigation retain contrast; interior page headers are unchanged."
+    areas:
+      - frontend
+      - responsive-design
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/Pages/index.html"
+      component: "Header overlay on hero image"
+    files:
+      - Pages/index.html
+      - styles.css
+      - archive/header-experiment-2026-10-27/Pages/index.html
+      - archive/header-experiment-2026-10-27/styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0057
+    date: "2026-10-27"
+    type: frontend
+    title: "Remove the Home header fade experiment"
+    summary: "Remove the added dark gradient band after review; keep the existing transparent header floating over the Home hero image to avoid competing with the logo's dark outline. Preserve the experiment checkpoint for reference."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/Pages/index.html"
+      component: "Header over hero image"
+    files:
+      - Pages/index.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0058
+    date: "2026-10-27"
+    type: frontend
+    title: "Apply selected RideWire BMX logo concept"
+    summary: "Add the selected transparent RideWire BMX logo as a new versioned asset and update site header and footer references across pages and articles. Existing logo files remain available; a pre-change checkpoint is retained."
+    areas:
+      - frontend
+      - branding
+    location:
+      site: "Public website"
+      page: "Shared header and footer"
+      route: "All site pages and articles"
+      component: "RideWire logo lockup"
+    files:
+      - assets/ridewire-logo-v5.png
+      - Pages/index.html
+      - Pages/news.html
+      - Pages/spotlight.html
+      - Pages/videos.html
+      - Pages/riders.html
+      - Pages/about.html
+      - Pages/privacy.html
+      - Pages/terms.html
+      - Pages/cookies.html
+      - articles/news/
+      - articles/spotlight/
+      - ChangeLog.YAML
+
+  - id: RW-0059
+    date: "2026-10-27"
+    type: frontend
+    title: "Correct the logo to the owner's selected design"
+    summary: "Replace the first generated concept with the exact circular-rider and split RIDE/WIRE lockup selected by the owner. The selected transparent asset remains ridewire-logo-v5.png; the unselected concept is archived, and page references stay on the selected asset."
+    areas:
+      - frontend
+      - branding
+    location:
+      site: "Public website"
+      page: "Shared header and footer"
+      route: "All site pages and articles"
+      component: "Selected circular rider logo lockup"
+    files:
+      - assets/ridewire-logo-v5.png
+      - archive/logo-options/ridewire-logo-concept-unselected.png
+      - ChangeLog.YAML
+
+  - id: RW-0060
+    date: "2026-10-27"
+    type: documentation
+    title: "Save a project handoff before pausing"
+    summary: "Record the RideWireBMX project state, decisions, checks, open items and next action for resuming later."
+    areas:
+      - project-documentation
+    location:
+      site: "RideWireBMX repository"
+      page: "Project handoff"
+      route: "Repository root"
+      component: "Portable project status note"
+    files:
+      - HANDOFF-2026-10-27.md
       - ChangeLog.YAML

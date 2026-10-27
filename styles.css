@@ -297,6 +297,7 @@ em { color: #e50914; font-style: normal; }
   .video-story h3 { font-size: 42px; }
 }
 
+
 /* Dedicated page layouts and page-based navigation */
 .site-nav a[aria-current="page"] { color: var(--lime); }
 .interior-page .site-header { position: absolute; }
@@ -582,3 +583,30 @@ em { color: #e50914; font-style: normal; }
 @media(max-width:640px){.park-photo-timeline{grid-template-columns:1fr}.park-photo-timeline .article-photo:last-child{grid-column:auto}.park-photo-timeline .article-photo img,.park-photo-timeline .article-photo:last-child img{height:230px}}
 
 .editor-memory { margin: 32px 0; padding: 20px 24px; border-left: 3px solid var(--lime); background: #f3f3f3; color: #333; font-size: 14px; line-height: 1.8; }
+
+/* Homepage editorial flow: preserve the red ticker, then lead with current news and one archive feature. */
+.home-latest-section { background: #f5f5f5; }
+.home-news-heading { margin-bottom: 38px; }
+.home-latest-section .scene-news-art { min-height: 290px; }
+.home-news-all { margin: 24px 0 0; text-align: right; }
+.home-archive-section { padding-block: 92px; background: #111; color: #fff; }
+.home-archive-section .section-label { margin-bottom: 34px; }
+.home-archive-section .section-label i { background: #555; }
+.home-archive-feature { grid-template-columns: 1.02fr .98fr; border-color: #383838; background: #171717; color: #fff; }
+.home-archive-feature > img { min-height: 390px; object-position: center 38%; }
+.home-archive-feature .news-feature-copy h2 { color: #fff; }
+.home-archive-feature .news-feature-copy h2 em { color: var(--lime); }
+.home-archive-feature .news-feature-copy .lead { color: #d2d2d2; }
+.home-archive-feature .home-archive-credit { margin: 0 0 12px; color: #aaa; font-size: 10px; line-height: 1.6; }
+.home-archive-feature .home-archive-credit a { color: #fff; text-underline-offset: 3px; }
+.home-archive-feature .text-link { color: #fff; border-color: #777; }
+.home-archive-feature .text-link span { color: var(--lime); }
+@media (max-width: 760px) {
+  .home-latest-section.section { padding-block: 68px; }
+  .home-news-heading { margin-bottom: 28px; }
+  .home-latest-section .scene-news-art { min-height: 225px; }
+  .home-archive-section { padding-block: 64px; }
+  .home-archive-section .section-label { margin-bottom: 24px; }
+  .home-archive-feature > img { min-height: 255px; max-height: 340px; }
+  .home-archive-feature .news-feature-copy { padding: 26px 22px; }
+}
