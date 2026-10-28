@@ -1,0 +1,1457 @@
+# Project change history. Add one entry for each meaningful implementation change.
+# Use areas to indicate frontend, backend, infrastructure, or documentation impact.
+# Use location to record the page, route, screen, service, or module affected.
+version: 1
+project: RideWireBMX
+entries:
+  - id: RW-0001
+    date: "2026-10-24"
+    type: documentation
+    title: "Create project change log"
+    summary: "Add a structured log for tracking changes and their site locations across frontend and backend."
+    areas:
+      - documentation
+    location:
+      site: "Project-wide"
+      page: null
+      route: null
+      component: null
+      service: null
+    files:
+      - ChangeLog.YAML
+
+  - id: RW-0002
+    date: "2026-10-24"
+    type: feature
+    title: "Build the RideWireBMX homepage"
+    summary: "Create a responsive static landing page with original BMX artwork, mobile navigation, and IONOS upload guidance."
+    areas:
+      - frontend
+      - documentation
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Header navigation, hero, story, scene cards, closing call-to-action, footer"
+      service: null
+    files:
+      - index.html
+      - styles.css
+      - script.js
+      - assets/ridewire-hero.png
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0003
+    date: "2026-10-24"
+    type: design
+    title: "Apply RideWireBMX logo and brand colors"
+    summary: "Add the supplied RideWireBMX wordmark to the site header and footer and align the visual accents with its red, black, and white palette."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Header brand, footer brand, color theme"
+      service: null
+    files:
+      - index.html
+      - styles.css
+      - assets/ridewire-logo.png
+
+  - id: RW-0004
+    date: "2026-10-24"
+    type: tooling
+    title: "Add local homepage preview"
+    summary: "Add a dependency-free Node server bound to localhost so the public homepage and assets can be viewed during development."
+    areas:
+      - infrastructure
+      - documentation
+    location:
+      site: "Local development"
+      page: "Home preview"
+      route: "http://127.0.0.1:8000/"
+      component: "Static file preview server"
+      service: null
+    files:
+      - preview-server.js
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0005
+    date: "2026-10-24"
+    type: design
+    title: "Replace homepage hero background"
+    summary: "Use the supplied BMX skatepark photograph as the homepage hero background."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Hero background image"
+      service: null
+    files:
+      - assets/ridewire-hero.png
+      - ChangeLog.YAML
+
+  - id: RW-0006
+    date: "2026-10-24"
+    type: design
+    title: "Lower the hero image framing"
+    summary: "Shift the homepage hero photograph down slightly to keep more of the rider's front wheel in frame."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Hero image framing"
+      service: null
+    files:
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0007
+    date: "2026-10-24"
+    type: feature
+    title: "Add the requested homepage navigation"
+    summary: "Add Home, News, Videos, Riders, and About menu items with working section links and coming-soon destinations for new editorial sections."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Header navigation, news section, videos section, riders section, about section"
+      service: null
+    files:
+      - index.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0008
+    date: "2026-10-24"
+    type: design
+    title: "Center and enlarge the header menu"
+    summary: "Center the desktop navigation in the header and increase label size while preserving the mobile dropdown layout."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Header navigation"
+      service: null
+    files:
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0009
+    date: "2026-10-24"
+    type: feature
+    title: "Add the monthly Rider Spotlight"
+    summary: "Replace the About intro with a Rider Spotlight feature and add an accessible popup containing a rider image and article placeholder."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/#spotlight"
+      component: "Rider Spotlight section and article dialog"
+      service: null
+    files:
+      - index.html
+      - styles.css
+      - script.js
+      - ChangeLog.YAML
+
+  - id: RW-0010
+    date: "2026-10-24"
+    type: content
+    title: "Add the first Rider Spotlight photo"
+    summary: "Place the supplied rider photo in the Spotlight popup and prepare the article area for the rider's name and story."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/#spotlight"
+      component: "Rider Spotlight article popup"
+      service: null
+    files:
+      - assets/spotlight-rider.jpg
+      - index.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0011
+    date: "2026-10-24"
+    type: content
+    title: "Publish the Lucas Silva Rider Spotlight feature"
+    summary: "Format the supplied profile as a news feature, add the supplied photos and Instagram Reel, and surface it in the News section and Spotlight popup."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/#news"
+      component: "News feature card and Lucas Silva Rider Spotlight article popup"
+      service: "Instagram embed"
+    files:
+      - index.html
+      - styles.css
+      - script.js
+      - assets/lucas-silva/2025-national-podium.jpg
+      - assets/lucas-silva/2024-backyard-jam-family.jpg
+      - assets/lucas-silva/competition-family.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0012
+    date: "2026-10-24"
+    type: feature
+    title: "Build the Throwbacks slideshow and video stories"
+    summary: "Replace the What Moves Us cards with a fading two-story carousel and add matching video and article features in the Videos section."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/#scene and /#videos"
+      component: "Throwbacks carousel, Writing on the Wall feature, Mike Miller feature"
+      service: "YouTube embeds"
+    files:
+      - index.html
+      - styles.css
+      - script.js
+      - assets/throwbacks/writing-on-the-wall.jpg
+      - assets/throwbacks/mike-miller.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0013
+    date: "2026-10-24"
+    type: feature
+    title: "Create dedicated site pages and page navigation"
+    summary: "Change the header menu to open standalone Home, News, Videos, Riders and About pages. Move the Lucas feature to News and the throwback films and stories to Videos, with page-specific Riders and About content."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Home, News, Videos, Riders and About"
+      route: "/, /news.html, /videos.html, /riders.html, /about.html"
+      component: "Main navigation and dedicated page content"
+      service: "Static IONOS Webspace hosting"
+    files:
+      - index.html
+      - news.html
+      - videos.html
+      - riders.html
+      - about.html
+      - styles.css
+      - preview-server.js
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0014
+    date: "2026-10-24"
+    type: content
+    title: "Separate Monthly Spotlight from BMX scene News"
+    summary: "Add a dedicated Spotlight page for Lucas Silva, revise News to cover the wider BMX scene, update the homepage feature cards, and add Spotlight to the shared six-page navigation."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Home, News, Spotlight, Riders and About"
+      route: "/, /news.html, /spotlight.html, /riders.html, /about.html"
+      component: "Shared navigation, homepage Spotlight and News features, scene news landing page, monthly rider feature"
+    files:
+      - index.html
+      - news.html
+      - spotlight.html
+      - riders.html
+      - about.html
+      - styles.css
+      - preview-server.js
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0015
+    date: "2026-10-24"
+    type: content
+    title: "Shelf Videos and Riders homepage sections"
+    summary: "Remove the Videos and Riders teaser sections from the homepage while keeping their standalone pages and header navigation available for future use."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Homepage section lineup"
+    files:
+      - index.html
+      - ChangeLog.YAML
+
+  - id: RW-0016
+    date: "2026-10-24"
+    type: feature
+    title: "Build the BMX Freestyle rider directory"
+    summary: "Expand Riders into a searchable Park and Flatland profile directory featuring Lucas Silva and six prominent international riders, with short bios, achievement notes, source links, and credited Wikimedia Commons images."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Searchable rider cards and discipline filters"
+      service: "Wikimedia Commons images and UCI reference articles"
+    files:
+      - riders.html
+      - styles.css
+      - script.js
+      - ChangeLog.YAML
+
+  - id: RW-0017
+    date: "2026-10-24"
+    type: content
+    title: "Add event-scene BMX Freestyle profiles"
+    summary: "Broaden the rider directory with Drew Bezanson, Dave Mirra, and Ryan Williams, adding X Games, Dew Tour, Nitro Circus and Simple Session context alongside the existing Rebel Jam rider coverage."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Searchable BMX Freestyle rider directory"
+      service: "Wikimedia Commons, X Games, Nitro Circus, Simple Session and BMX editorial archives"
+    files:
+      - riders.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0018
+    date: "2026-10-24"
+    type: feature
+    title: "Add on-site rider biography popups"
+    summary: "Open an accessible modal profile from each Riders card with a RideWire-written short bio, rider image and credit, highlights, event tags, and a further-reading source link."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Rider biography dialog"
+    files:
+      - riders.html
+      - script.js
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0019
+    date: "2026-10-24"
+    type: content
+    title: "Add riders featured in the existing throwbacks"
+    summary: "Add Garrett Reynolds, Dennis Enarson, Nigel Sylvester, Mike Spinner, and Mike Miller to the Riders directory with on-site bios, film/event context, and image credits or feature-image labels."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Nike 6.0 and Mike Miller rider profiles"
+      service: "Writing on the Wall, Ride UK BMX and Wikimedia Commons"
+    files:
+      - riders.html
+      - script.js
+      - ChangeLog.YAML
+
+  - id: RW-0020
+    date: "2026-10-24"
+    type: content
+    title: "Use a static licensed photo for Mike Spinner"
+    summary: "Replace Mike Spinner's animated GIF with a static Creative Commons photo that includes him, updating its caption and popup reference."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Mike Spinner profile photo"
+      service: "Wikimedia Commons"
+    files:
+      - riders.html
+      - ChangeLog.YAML
+
+  - id: RW-0021
+    date: "2026-10-24"
+    type: content
+    title: "Refresh Nike 6.0 rider photos"
+    summary: "Give Garrett Reynolds a distinct, credited Red Bull editorial action photo and replace Mike Spinner's animated image with a static CC BY 2.0 photograph. Dennis Enarson's image awaits a reuse-cleared photo."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Nike 6.0 rider profile photography"
+      service: "Red Bull Content Pool and Wikimedia Commons"
+    files:
+      - riders.html
+      - ChangeLog.YAML
+
+  - id: RW-0022
+    date: "2026-10-24"
+    type: content
+    title: "Link Dennis Enarson's Ride UK bike check"
+    summary: "Add the Ride UK bike check as the further-reading source in Dennis Enarson's profile popup. The photo remains on its source page pending reuse permission."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Dennis Enarson profile popup source"
+      service: "Ride UK BMX"
+    files:
+      - riders.html
+      - ChangeLog.YAML
+
+  - id: RW-0023
+    date: "2026-10-25"
+    type: content
+    title: "Use Dennis Enarson photo supplied by Karl"
+    summary: "Replace the shared Writing on the Wall feature image on Dennis Enarson's card and popup with the supplied local photo, crediting the Facebook post as its source."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Riders"
+      route: "/riders.html"
+      component: "Dennis Enarson profile image and popup"
+      service: "Dennis Enarson Facebook post"
+    files:
+      - assets/dennis-enarson.jpg
+      - riders.html
+      - ChangeLog.YAML
+
+  - id: RW-0024
+    date: "2026-10-25"
+    type: content
+    title: "Add sourced BMX Freestyle scene news"
+    summary: "Replace the News landing placeholders with three original RideWire summaries covering the cancelled Riyadh Urban Worlds, the LA28 qualification update, and the 2026 FISE Shanghai festival and BMX Park podium. Link each story to its source."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News"
+      route: "/news.html"
+      component: "Scene news desk and sourced story cards"
+      service: "UCI and Shanghai municipal news"
+    files:
+      - news.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0025
+    date: "2026-10-25"
+    type: feature
+    title: "Create full on-site BMX news articles"
+    summary: "Create a dedicated RideWire article page for each of the three News stories, move source links into article citations, and change News cards to open the corresponding on-site report. Allow the pages through the local preview server."
+    areas:
+      - frontend
+      - content
+      - infrastructure
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/news.html, /news-riyadh-worlds-cancelled.html, /news-la28-qualification-update.html, /news-shanghai-fise-2026.html"
+      component: "News article cards, long-form article layout and source citations"
+      service: "UCI and Shanghai municipal news sources"
+    files:
+      - news.html
+      - news-riyadh-worlds-cancelled.html
+      - news-la28-qualification-update.html
+      - news-shanghai-fise-2026.html
+      - styles.css
+      - preview-server.js
+      - ChangeLog.YAML
+
+  - id: RW-0026
+    date: "2026-10-25"
+    type: design
+    title: "Add licensed BMX photos to the News stories"
+    summary: "Add distinct, credited BMX Freestyle Park images to each news card and its article page. Label the photos as illustrative European Championships imagery, link attribution and CC BY-SA 4.0 details, and preserve the story text overlays."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/news.html and three news article routes"
+      component: "News card artwork and article photo captions"
+      service: "Wikimedia Commons, Tim Rademacher, CC BY-SA 4.0"
+    files:
+      - assets/news/park-racing-philipp-muth.jpg
+      - assets/news/park-racing-kieran-reilly.jpg
+      - assets/news/park-racing-kim-lea-muller.jpg
+      - news.html
+      - news-riyadh-worlds-cancelled.html
+      - news-la28-qualification-update.html
+      - news-shanghai-fise-2026.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0027
+    date: "2026-10-25"
+    type: content
+    title: "Expand BMX news with event reports and archive feature"
+    summary: "Add original RideWire articles for FISE Montpellier, X Games New Orleans, the Simple Session Street Series, Ryan Williams' backflip-to-frontflip world-first, Nitro Circus Liwa, and the historical 2015 Dew Tour BMX Streetstyle. Add dated News cards, source citations, clearly qualified image captions, and allow all article pages through the local preview server."
+    areas:
+      - frontend
+      - content
+      - infrastructure
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/news.html and six new article routes"
+      component: "News cards, editorial articles, photo credits, source links"
+      service: "X Games, FISE, Simple Session, Nitro Circus, AS AcciÃ³n, The Boardr, Wikimedia Commons"
+    files:
+      - news.html
+      - news-fise-montpellier-2026.html
+      - news-simple-session-street-series-2026.html
+      - news-ryan-williams-world-first-2026.html
+      - news-x-games-new-orleans-2026.html
+      - news-nitro-circus-liwa-2026.html
+      - news-dew-tour-bmx-archive-2015.html
+      - preview-server.js
+      - ChangeLog.YAML
+
+  - id: RW-0028
+    date: "2026-10-25"
+    type: content
+    title: "Replace repeated news artwork with event-specific BMX imagery"
+    summary: "Use distinct event photos, official promotional artwork, and video stills for the News cards and articles. Credit the image source, label promotional artwork accurately, and embed the Simple Session Flickr photo and BMX highlight videos on their articles."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/news.html and five event article routes"
+      component: "News card photography, article lead images, image credits, video embeds"
+      service: "FISE, Simple Session / Flickr, YouTube / Our BMX, Nitro Circus"
+    files:
+      - news.html
+      - news-shanghai-fise-2026.html
+      - news-fise-montpellier-2026.html
+      - news-simple-session-street-series-2026.html
+      - news-x-games-new-orleans-2026.html
+      - news-ryan-williams-world-first-2026.html
+      - news-nitro-circus-liwa-2026.html
+      - assets/news/fise-shanghai-women-2026.jpg
+      - assets/news/fise-montpellier-park-2026.jpg
+      - assets/news/nitro-circus-liwa-2026-promo.jpg
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0029
+    date: "2026-10-25"
+    type: content
+    title: "Correct Dew Tour article photo to BMX Freestyle Streetstyle"
+    summary: "Replace the mismatched race/ramp visual with a real Dew Tour BMX Streetstyle action photo. Identify it as a 2014 Brooklyn image used to illustrate the historical 2015 Chicago report, and credit Fat Tony and Fox Racing."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/news.html and /news-dew-tour-bmx-archive-2015.html"
+      component: "Dew Tour card image, article lead image, photo credit"
+      service: "Fox Racing gallery"
+    files:
+      - news.html
+      - news-dew-tour-bmx-archive-2015.html
+      - ChangeLog.YAML
+
+  - id: RW-0030
+    date: "2026-10-25"
+    type: content
+    title: "Serve Dew Tour Freestyle photo locally and correct card credit"
+    summary: "Store the verified 2014 Dew Tour Brooklyn BMX Streetstyle action photo locally so it displays without relying on Fox Racing's expired image-host certificate. Correct the News card caption and clarify the photo is an earlier discipline reference for the 2015 Chicago recap."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/news.html and /news-dew-tour-bmx-archive-2015.html"
+      component: "Dew Tour card image, article lead image, caption and source note"
+      service: "Fox Racing gallery; photo by Fat Tony"
+    files:
+      - news.html
+      - news-dew-tour-bmx-archive-2015.html
+      - assets/news/dew-tour-bmx-streetstyle-2014.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0031
+    date: "2026-10-25"
+    type: content
+    title: "Use a photo from the 2015 Dew Tour Chicago Streetstyle event"
+    summary: "Replace the earlier 2014 illustrative photo with the 2015 Chicago Streetstyle podium photo published alongside BMXUnion's contemporaneous event report. Credit BMXUnion and state that no individual photographer credit was listed."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/news.html and /news-dew-tour-bmx-archive-2015.html"
+      component: "Dew Tour card image, article lead image, photo credit and sources"
+      service: "BMXUnion; The Boardr results archive"
+    files:
+      - news.html
+      - news-dew-tour-bmx-archive-2015.html
+      - assets/news/dew-tour-bmx-streetstyle-2015.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0032
+    date: "2026-10-25"
+    type: content
+    title: "Add BMX Freestyle and BMX Racing news coverage"
+    summary: "Add RideWire reports on the 2026 UEC European Championships, Extreme Barcelona Hors Class, the Carrara UCI C1 event and the Chongli BMX Racing World Cup. Add All News, BMX Freestyle and BMX Racing filters. Use a CC BY-SA 4.0 UEC event photo, an organizer-published Extreme Barcelona image, and a RideWire results graphic for Carrara because AusCycling's copyright terms prohibit photo reuse."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News"
+      route: "/news.html and four new story pages"
+      component: "News discipline filters, event cards, story pages, photos and source links"
+      service: "UCI, UEC, Extreme Barcelona, AusCycling, FATBMX"
+    files:
+      - news.html
+      - news-bmx-racing-chongli-2026.html
+      - news-bmx-europeans-2026.html
+      - news-extreme-barcelona-2026.html
+      - news-carrara-bmx-c1-2026.html
+      - script.js
+      - styles.css
+      - preview-server.js
+      - assets/news/uec-europeans-2026-noemi-molnar.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0033
+    date: "2026-10-25"
+    type: frontend
+    title: "Fill the News grid transition before a full-width story"
+    summary: "Give the LA28 qualification story a full-width card layout so it does not leave an empty grid column before the following full-width Riyadh article."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "News"
+      route: "/news.html"
+      component: "LA28 qualification article card width"
+    files:
+      - news.html
+      - ChangeLog.YAML
+
+  - id: RW-0034
+    date: "2026-10-25"
+    type: frontend
+    title: "Refresh the RideWireBMX logo"
+    summary: "Add a polished logo variant that keeps the red lightning W, RIDE/WIRE color split, BMX submark and black/white/red palette, with cleaner outlines and simplified speed accents. Update the website pages to use the new versioned asset while retaining the original file."
+    areas:
+      - frontend
+      - branding
+    location:
+      site: "Public website"
+      page: "Sitewide header and footer"
+      route: "All website pages"
+      component: "Brand logo"
+    files:
+      - assets/ridewire-logo-v2.png
+      - about.html
+      - index.html
+      - news-bmx-europeans-2026.html
+      - news-bmx-racing-chongli-2026.html
+      - news-carrara-bmx-c1-2026.html
+      - news-dew-tour-bmx-archive-2015.html
+      - news-extreme-barcelona-2026.html
+      - news-fise-montpellier-2026.html
+      - news-la28-qualification-update.html
+      - news-nitro-circus-liwa-2026.html
+      - news-riyadh-worlds-cancelled.html
+      - news-ryan-williams-world-first-2026.html
+      - news-shanghai-fise-2026.html
+      - news-simple-session-street-series-2026.html
+      - news-x-games-new-orleans-2026.html
+      - news.html
+      - riders.html
+      - spotlight.html
+      - videos.html
+      - ChangeLog.YAML
+
+  - id: RW-0035
+    date: "2026-10-25"
+    type: frontend
+    title: "Integrate rider silhouette into RideWireBMX logo"
+    summary: "Create a new logo variant using the supplied BMX action photo as a rider-and-bike reference. Integrate a high-contrast rider graphic around the central lightning bolt while preserving the RIDEWIRE wordmark, BMX submark, palette and transparent background. Keep prior logo assets intact."
+    areas:
+      - frontend
+      - branding
+    location:
+      site: "Public website"
+      page: "Sitewide header and footer"
+      route: "All website pages"
+      component: "Brand logo"
+      service: "User-supplied BMX rider photo"
+    files:
+      - assets/ridewire-logo-v3.png
+      - about.html
+      - index.html
+      - news-bmx-europeans-2026.html
+      - news-bmx-racing-chongli-2026.html
+      - news-carrara-bmx-c1-2026.html
+      - news-dew-tour-bmx-archive-2015.html
+      - news-extreme-barcelona-2026.html
+      - news-fise-montpellier-2026.html
+      - news-la28-qualification-update.html
+      - news-nitro-circus-liwa-2026.html
+      - news-riyadh-worlds-cancelled.html
+      - news-ryan-williams-world-first-2026.html
+      - news-shanghai-fise-2026.html
+      - news-simple-session-street-series-2026.html
+      - news-x-games-new-orleans-2026.html
+      - news.html
+      - riders.html
+      - spotlight.html
+      - videos.html
+      - ChangeLog.YAML
+
+  - id: RW-0036
+    date: "2026-10-25"
+    type: frontend
+    title: "Use the centered rider logo and increase header size"
+    summary: "Adopt the selected compact centered-rider logo that separates RIDE and WIRE around the lightning bolt. Increase logo sizing for desktop and mobile headers while retaining earlier logo files."
+    areas:
+      - frontend
+      - branding
+    location:
+      site: "Public website"
+      page: "Sitewide header and footer"
+      route: "All website pages"
+      component: "Brand logo asset and responsive logo sizing"
+    files:
+      - assets/ridewire-logo-v4-center.png
+      - styles.css
+      - about.html
+      - index.html
+      - news-bmx-europeans-2026.html
+      - news-bmx-racing-chongli-2026.html
+      - news-carrara-bmx-c1-2026.html
+      - news-dew-tour-bmx-archive-2015.html
+      - news-extreme-barcelona-2026.html
+      - news-fise-montpellier-2026.html
+      - news-la28-qualification-update.html
+      - news-nitro-circus-liwa-2026.html
+      - news-riyadh-worlds-cancelled.html
+      - news-ryan-williams-world-first-2026.html
+      - news-shanghai-fise-2026.html
+      - news-simple-session-street-series-2026.html
+      - news-x-games-new-orleans-2026.html
+      - news.html
+      - riders.html
+      - spotlight.html
+      - videos.html
+      - ChangeLog.YAML
+
+  - id: RW-0037
+    date: "2026-10-25"
+    type: frontend
+    title: "Increase logo visibility in the site header"
+    summary: "Increase the rider-integrated logo's display size at desktop, tablet and mobile widths, make room with a taller header, and add a subtle light edge and shadow so the black outline separates from the dark hero image."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Sitewide header"
+      route: "All website pages"
+      component: "Responsive logo sizing and contrast"
+    files:
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0038
+    date: "2026-10-25"
+    type: frontend
+    title: "Improve home hero headline contrast"
+    summary: "Strengthen the hero image overlay behind the headline on desktop and mobile, add a soft shadow to the headline and a fine light outline to the red LINE accent for clearer separation from the photo."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Hero image overlay and Find Your Line headline"
+    files:
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0039
+    date: "2026-10-25"
+    type: frontend
+    title: "Give the home hero headline more letter spacing"
+    summary: "Revert the stronger overlay and text outline, reduce the hero display weight slightly, open the letter spacing, and tune the headline size for mobile so FIND / YOUR LINE remains readable without crowding."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/"
+      component: "Find Your Line typography and hero overlay"
+    files:
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0040
+    date: "2026-10-25"
+    type: frontend
+    title: "Lighten the Videos page"
+    summary: "Replace the dark Videos intro and library surfaces with the site paper/white palette, set dark navigation and readable light-theme copy, and add subtle definition around the video players."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Videos"
+      route: "/videos.html"
+      component: "Page intro, video library, story copy and player frames"
+    files:
+      - videos.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0041
+    date: "2026-10-25"
+    type: content
+    title: "Replace unavailable Writing on the Wall video embed"
+    summary: "Replace the unavailable YouTube embed with Pinkbike's full-film player for Nike 6.0 Writing on the Wall and add a direct Pinkbike fallback link beneath the film description."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Videos"
+      route: "/videos.html#video-writing-wall"
+      component: "Writing on the Wall player and fallback link"
+      service: "Pinkbike video 127104"
+    files:
+      - videos.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0042
+    date: "2026-10-25"
+    type: frontend
+    title: "Use the supplied Pinkbike embed URL"
+    summary: "Update the Writing on the Wall player to use Pinkbike's provided /v/embed/ URL with the red player accent and match the player frame to the embed's 500:333 ratio."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Videos"
+      route: "/videos.html#video-writing-wall"
+      component: "Pinkbike full-film iframe"
+      service: "Pinkbike video 127104"
+    files:
+      - videos.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0043
+    date: "2026-10-25"
+    type: frontend
+    title: "Match the Videos page top to Spotlight"
+    summary: "Restore the Videos page header and intro to the shared dark Spotlight treatment while keeping the video library light."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Videos"
+      route: "/videos.html"
+      component: "Site header and page intro"
+    files:
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0044
+    date: "2026-10-25"
+    type: frontend
+    title: "Add Alexandre Rodrigues Rider Spotlight"
+    summary: "Import the Alexandre Rodrigues feature from the RideWireBMX Wix site, add the original five associated photographs locally, and link the full story from the Spotlight archive."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Spotlight"
+      route: "/spotlight-alexandre-rodrigues.html"
+      component: "Alexandre Rodrigues profile and Spotlight archive card"
+      source: "https://karlkierandaly25.wixsite.com/ridewirebmx/post/alexandre-rodrigues-twenty-years-of-progression"
+    files:
+      - spotlight.html
+      - spotlight-alexandre-rodrigues.html
+      - preview-server.js
+      - styles.css
+      - assets/alexandre-rodrigues/portrait.jpg
+      - assets/alexandre-rodrigues/portimao-session.jpg
+      - assets/alexandre-rodrigues/riding-portrait.jpg
+      - assets/alexandre-rodrigues/bmx-edit.jpg
+      - assets/alexandre-rodrigues/ride-portrait.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0045
+    date: "2026-10-25"
+    type: frontend
+    title: "Make Spotlight a rider selection page"
+    summary: "Replace the immediate Lucas article layout with rider cards for Lucas Silva and Alexandre Rodrigues, and give Lucas a dedicated article page."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Spotlight"
+      route: "/spotlight.html"
+      component: "Rider selection cards and profile links"
+    files:
+      - spotlight.html
+      - spotlight-lucas-silva.html
+      - spotlight-alexandre-rodrigues.html
+      - preview-server.js
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0046
+    date: "2026-10-25"
+    type: frontend
+    title: "Use an editorial article layout for Spotlight profiles"
+    summary: "Restyle rider profiles with an editorial headline, byline, lead photo and inline story photos instead of the split sticky-image layout."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Spotlight"
+      route: "/spotlight-lucas-silva.html"
+      component: "Editorial rider story layout"
+      reference: "https://www.fatbmx.com/bmx-news/item/64111-sam-grace-rides-west-and-takes-the-groundswell-bmx-bowl-battle"
+    files:
+      - spotlight-lucas-silva.html
+      - spotlight-alexandre-rodrigues.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0047
+    date: "2026-10-25"
+    type: frontend
+    title: "Add footer links and policy pages"
+    summary: "Add Privacy, Terms & Conditions and Cookies links throughout the site, with dedicated pages describing the current frontend and its external services."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Global footer"
+      route: "/privacy.html, /terms.html, /cookies.html"
+      component: "Footer legal navigation and policy pages"
+    files:
+      - "*.html"
+      - styles.css
+      - preview-server.js
+      - ChangeLog.YAML
+
+  - id: RW-0048
+    date: "2026-10-25"
+    type: maintenance
+    title: "Organize articles into dedicated folders"
+    summary: "Move the 13 standalone news stories into articles/news and the two rider profiles into articles/spotlight; update links, preview routing and deployment notes."
+    areas:
+      - frontend
+      - maintenance
+    location:
+      site: "RideWireBMX repository"
+      page: "Project structure"
+      route: "/articles/news/ and /articles/spotlight/"
+      component: "Article storage and relative asset links"
+    files:
+      - articles/news/
+      - news.html
+      - spotlight.html
+      - preview-server.js
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0049
+    date: "2026-10-25"
+    type: maintenance
+    title: "Group main pages in Pages folder"
+    summary: "Move the main site pages into Pages, retain a root entry page for IONOS hosting, and update internal links, preview routing and project documentation."
+    areas:
+      - frontend
+      - maintenance
+    location:
+      site: "RideWireBMX repository"
+      page: "Main site pages"
+      route: "/Pages/"
+      component: "Page organization and local navigation"
+    files:
+      - Pages/
+      - index.html
+      - articles/
+      - preview-server.js
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0050
+    date: "2026-10-25"
+    type: frontend
+    title: "Add Portugal BMX news and Parque da Juventude photo history"
+    summary: "Publish RideWire reports on the return of Portugal's BMX Freestyle circuit and Clube Bicross de Portimao's 2026 Race Cup team title. Add sourced photos and a dated 1996, 2010 and 2025 Parque da Juventude timeline."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News and article pages"
+      route: "/articles/news/news-portugal-bmx-freestyle-returns-2026.html, /articles/news/news-portimao-bmx-race-cup-2026.html"
+      component: "Portugal BMX reports, listing cards and park photo timeline"
+    files:
+      - Pages/news.html
+      - articles/news/news-portugal-bmx-freestyle-returns-2026.html
+      - articles/news/news-portimao-bmx-race-cup-2026.html
+      - assets/news/portugal-bmx-freestyle-torres-vedras-2026.jpg
+      - assets/news/portimao-cbp-taca-portugal-2026.jpg
+      - assets/news/portimao-bmx-big-contest-1996.jpg
+      - assets/news/portimao-rebel-jam-2010.webp
+      - assets/news/portimao-municipal-park-2025.jpg
+      - styles.css
+      - ChangeLog.YAML
+
+
+  - id: RW-0051
+    date: "2026-10-25"
+    type: frontend
+    title: "Publish Portimao BMX park and scene history feature"
+    summary: "Add a personal, source-led feature tracing Portimao BMX from pre-park events and the 1996 opening through the 1998 Worlds, 2010 Rebel Jam, missing-ramp period, street riding and the 2025 rebuild. Add credited archive photos and cross-links from News and the Portugal Freestyle report."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "News article"
+      route: "/articles/news/news-portimao-bmx-park-history.html"
+      component: "Portimao BMX history feature, photo archive and news card"
+    files:
+      - Pages/news.html
+      - articles/news/news-portimao-bmx-park-history.html
+      - articles/news/news-portugal-bmx-freestyle-returns-2026.html
+      - assets/news/portimao-air-ground-masters-1995.jpg
+      - assets/news/portimao-mat-hoffman-1998.jpg
+      - assets/news/portimao-mat-hoffman-1998-portrait.jpg
+      - assets/news/portimao-bmx-worlds-1998.jpg
+      - styles.css
+      - ChangeLog.YAML
+
+
+  - id: RW-0052
+    date: "2026-10-25"
+    type: frontend
+    title: "Add the editor's BMX Summer Comp 2005 memory"
+    summary: "Expand the Portimao history article with the editor's first-ramp memory, friends for life, the supplied BMX Summer Comp 2005 logo and the user's YouTube video."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Portimao BMX history article"
+      route: "/articles/news/news-portimao-bmx-park-history.html"
+      component: "2005 personal memory, event logo and video embed"
+    files:
+      - articles/news/news-portimao-bmx-park-history.html
+      - assets/news/bmx-summer-comp-2005-logo.jpg
+      - ChangeLog.YAML
+
+  - id: RW-0053
+    date: "2026-10-25"
+    type: frontend
+    title: "Add Portimao Rebel Jam skatepark build video"
+    summary: "Embed the editor-supplied Vimeo footage of the Rebel Jam park build and add the editor's recollection about being woken by a homemade flamethrower."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Portimao BMX history article"
+      route: "/articles/news/news-portimao-bmx-park-history.html"
+      component: "2010 Rebel Jam park build video and editor memory"
+    files:
+      - articles/news/news-portimao-bmx-park-history.html
+      - ChangeLog.YAML
+
+  - id: RW-0054
+    date: "2026-10-27"
+    type: frontend
+    title: "Reorder homepage around BMX news and archive feature"
+    summary: "Archive the previous homepage and lead the new flow with latest BMX Freestyle and Racing cards followed by the Portimao history feature, keeping the red ticker immediately below the hero and retaining Spotlight and Throwbacks further down."
+    areas:
+      - frontend
+      - content
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/Pages/index.html"
+      component: "Hero, red ticker, latest news cards, Portimao archive feature, Spotlight and Throwbacks"
+    files:
+      - Pages/index.html
+      - styles.css
+      - archive/homepage/index-before-editorial-layout-2026-10-27.html
+      - ChangeLog.YAML
+
+  - id: RW-0055
+    date: "2026-10-27"
+    type: editorial
+    title: "Prepare unpublished BMX event drafts and coverage priorities"
+    summary: "Create a Coming Up folder with UCI BMX Racing Sarasota and BMX Freestyle Sakai article drafts, and a Worth Covering index of recent event stories already covered on the News page. Drafts remain unpublished and are not linked from public pages."
+    areas:
+      - content
+      - editorial
+    location:
+      site: "RideWireBMX repository"
+      page: "Editorial drafts"
+      route: "Not published"
+      component: "Coming Up and Worth Covering folders"
+    files:
+      - articles/drafts/README.md
+      - articles/drafts/coming-up/sarasota-world-cup-finale-2026.md
+      - articles/drafts/coming-up/sakai-freestyle-world-cup-2026.md
+      - ChangeLog.YAML
+
+  - id: RW-0056
+    date: "2026-10-27"
+    type: frontend
+    title: "Blend Home navigation into the hero image"
+    summary: "Add a transparent dark fade behind the Home page header so the hero image remains visible while the white logo and navigation retain contrast; interior page headers are unchanged."
+    areas:
+      - frontend
+      - responsive-design
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/Pages/index.html"
+      component: "Header overlay on hero image"
+    files:
+      - Pages/index.html
+      - styles.css
+      - archive/header-experiment-2026-10-27/Pages/index.html
+      - archive/header-experiment-2026-10-27/styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0057
+    date: "2026-10-27"
+    type: frontend
+    title: "Remove the Home header fade experiment"
+    summary: "Remove the added dark gradient band after review; keep the existing transparent header floating over the Home hero image to avoid competing with the logo's dark outline. Preserve the experiment checkpoint for reference."
+    areas:
+      - frontend
+    location:
+      site: "Public website"
+      page: "Home"
+      route: "/Pages/index.html"
+      component: "Header over hero image"
+    files:
+      - Pages/index.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0058
+    date: "2026-10-27"
+    type: frontend
+    title: "Apply selected RideWire BMX logo concept"
+    summary: "Add the selected transparent RideWire BMX logo as a new versioned asset and update site header and footer references across pages and articles. Existing logo files remain available; a pre-change checkpoint is retained."
+    areas:
+      - frontend
+      - branding
+    location:
+      site: "Public website"
+      page: "Shared header and footer"
+      route: "All site pages and articles"
+      component: "RideWire logo lockup"
+    files:
+      - assets/ridewire-logo-v5.png
+      - Pages/index.html
+      - Pages/news.html
+      - Pages/spotlight.html
+      - Pages/videos.html
+      - Pages/riders.html
+      - Pages/about.html
+      - Pages/privacy.html
+      - Pages/terms.html
+      - Pages/cookies.html
+      - articles/news/
+      - ChangeLog.YAML
+
+  - id: RW-0059
+    date: "2026-10-27"
+    type: frontend
+    title: "Correct the logo to the owner's selected design"
+    summary: "Replace the first generated concept with the exact circular-rider and split RIDE/WIRE lockup selected by the owner. The selected transparent asset remains ridewire-logo-v5.png; the unselected concept is archived, and page references stay on the selected asset."
+    areas:
+      - frontend
+      - branding
+    location:
+      site: "Public website"
+      page: "Shared header and footer"
+      route: "All site pages and articles"
+      component: "Selected circular rider logo lockup"
+    files:
+      - assets/ridewire-logo-v5.png
+      - archive/logo-options/ridewire-logo-concept-unselected.png
+      - ChangeLog.YAML
+
+  - id: RW-0060
+    date: "2026-10-27"
+    type: documentation
+    title: "Save a project handoff before pausing"
+    summary: "Record the RideWireBMX project state, decisions, checks, open items and next action for resuming later."
+    areas:
+      - project-documentation
+    location:
+      site: "RideWireBMX repository"
+      page: "Project handoff"
+      route: "Repository root"
+      component: "Portable project status note"
+    files:
+      - HANDOFF-2026-10-27.md
+      - ChangeLog.YAML
+
+  - id: RW-0061
+    date: "2026-10-27"
+    type: frontend
+    title: "Give News a consistent editorial card rhythm"
+    summary: "Arrange News stories in a repeating sequence of two compact cards followed by one full-width feature. Keep the sequence responsive to the active discipline filter and improve touch target size for filter buttons."
+    areas:
+      - frontend
+      - accessibility
+      - content-display
+    location:
+      site: "Public website"
+      page: "News"
+      route: "/news.html"
+      component: "News card grid and discipline filters"
+    files:
+      - Pages/news.html
+      - styles.css
+      - script.js
+      - ChangeLog.YAML
+
+  - id: RW-0062
+    date: "2026-10-27"
+    type: frontend
+    title: "Repeat the red ticker banner across public pages"
+    summary: "Reuse the Home page ticker beneath the opening intro on public main pages and News articles, leaving the Home ticker single and omitting individual Spotlight stories. Disable ticker motion for visitors who request reduced motion."
+    areas:
+      - frontend
+      - responsive-design
+      - accessibility
+    location:
+      site: "Public website"
+      page: "All public pages"
+      route: "Main pages and News articles"
+      component: "Shared red ticker banner"
+    files:
+      - Pages/
+      - articles/news/
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0063
+    date: "2026-10-27"
+    type: frontend
+    title: "Omit the red ticker from individual Spotlight stories"
+    summary: "Remove the site-wide ticker from the two individual Spotlight article pages while retaining it on the main Spotlight listing and other public pages."
+    areas:
+      - frontend
+      - content-display
+    location:
+      site: "Public website"
+      page: "Spotlight articles"
+      route: "/articles/spotlight/"
+      component: "Opening article banner"
+    files:
+      - articles/spotlight/spotlight-lucas-silva.html
+      - articles/spotlight/spotlight-alexandre-rodrigues.html
+      - ChangeLog.YAML
+
+  - id: RW-0064
+    date: "2026-10-27"
+    type: frontend
+    title: "Build out the RideWire About page"
+    summary: "Expand About into a clear overview of RideWire’s coverage and a first-person introduction to creator and editor Karl, including his Portimão BMX roots and a link to the park history story."
+    areas:
+      - frontend
+      - content
+      - responsive-design
+    location:
+      site: "Public website"
+      page: "About"
+      route: "/about.html"
+      component: "Mission, creator story, and editorial navigation"
+    files:
+      - Pages/about.html
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0065
+    date: "2026-10-27"
+    type: content
+    title: "Add Karl’s BMX riding story to About"
+    summary: "Replace the named rider list with the old CBP Crew and add Karl’s Portimão riding years, demos and competitions, general health setback, BMXAtitude inspiration, and present-day reason for creating RideWire."
+    areas:
+      - content
+      - frontend
+    location:
+      site: "Public website"
+      page: "About"
+      route: "/about.html"
+      component: "Creator and editor story"
+    files:
+      - Pages/about.html
+      - ChangeLog.YAML
+
+  - id: RW-0066
+    date: "2026-10-27"
+    type: backend
+    title: "Add lightweight Admin and Editor access with local PHP testing"
+    summary: "Add PHP staff sign-in, Owner bootstrap, Admin and Editor permissions, first-sign-in password changes, login throttling, an audit log, and SQLite localhost support alongside IONOS MariaDB. No media uploads, visitor accounts, analytics, or external service integration."
+    areas:
+      - backend
+      - security
+      - local-development
+      - documentation
+    location:
+      site: "RideWire staff area"
+      page: "Staff sign-in and permissions"
+      route: "/staff/"
+      component: "Owner, Admin and Editor account controls"
+      service: "PHP with SQLite locally and MariaDB on IONOS"
+    files:
+      - staff/
+      - private/config.example.php
+      - private/config.local.example.php
+      - private/.htaccess
+      - bin/create-owner.php
+      - bin/.htaccess
+      - database/staff-schema.sql
+      - scripts/start-local-backend.ps1
+      - .gitignore
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0067
+    date: "2026-10-28"
+    type: frontend
+    title: "Add a site-wide Staff Login entry point"
+    summary: "Label the Admin/Editor portal Staff Login and add a small footer link on public pages and articles. The link opens the existing protected staff route; no visitor account flow is added."
+    areas:
+      - frontend
+      - navigation
+      - backend-integration
+    location:
+      site: "Public website and staff portal"
+      page: "Shared footers and Staff Login"
+      route: "/staff/"
+      component: "Footer entry link and login heading"
+    files:
+      - Pages/
+      - articles/news/
+      - articles/spotlight/
+      - staff/index.php
+      - styles.css
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0068
+    date: "2026-10-28"
+    type: feature
+    title: "Add the staff dashboard, content editors and aggregate statistics"
+    summary: "Create a dashboard-first staff area with permission-gated News, Spotlight and Rider editors, a visual writing toolbar and PC image uploads, reversible archiving, public database-backed articles, first-party aggregate page counts with responsive SVG charts, and a local static-preview proxy for PHP routes. Import current static content into SQLite locally or MariaDB on IONOS."
+    areas:
+      - frontend
+      - backend
+      - security
+      - local-development
+      - documentation
+    location:
+      site: "RideWire public website and staff portal"
+      page: "Dashboard, Statistics, News, Spotlight, Riders and article detail"
+      route: "/staff/ and /article.php"
+      component: "Capability-gated editors, publish/draft/archive workflow, public content feed, article rendering and aggregate page views"
+      service: "PHP with SQLite locally and MariaDB on IONOS"
+    files:
+      - staff/
+      - private/content-store.php
+      - api/
+      - article.php
+      - article-content.css
+      - content-render.js
+      - staff/editor-view.php
+      - staff/editor.css
+      - staff/editor.js
+      - staff/upload-image.php
+      - bin/import-static-content.php
+      - database/staff-schema.sql
+      - Pages/news.html
+      - Pages/spotlight.html
+      - Pages/riders.html
+      - script.js
+      - preview-server.js
+      - scripts/start-local-backend.ps1
+      - .gitignore
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0069
+    date: "2026-10-28"
+    type: content
+    title: "Add BMX Freestyle legend rider cards"
+    summary: "Add original RideWire bios and searchable cards for Mark Webb, Harry Main and T.J. Lavin, including a Dirt / Vert filter. Use locally stored, attributed Creative Commons photos for Mark Webb and T.J. Lavin. Leave Harry Main's photo pending a reuse-cleared image."
+    areas:
+      - frontend
+      - content
+      - accessibility
+      - documentation
+    location:
+      site: "RideWire public website"
+      page: "Riders"
+      route: "/Pages/riders.html"
+      component: "Searchable rider cards, discipline filters and rider bio dialog"
+    files:
+      - Pages/riders.html
+      - script.js
+      - styles.css
+      - assets/riders/mark-webb-bmx-worlds-2009.jpg
+      - assets/riders/tj-lavin-2000.jpg
+      - assets/riders/CREDITS.md
+      - ChangeLog.YAML

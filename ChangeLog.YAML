@@ -1338,7 +1338,9 @@ entries:
       component: "Creator and editor story"
     files:
       - Pages/about.html
-      - ChangeLog.YAML  - id: RW-0066
+      - ChangeLog.YAML
+
+  - id: RW-0066
     date: "2026-10-27"
     type: backend
     title: "Add lightweight Admin and Editor access with local PHP testing"
@@ -1367,7 +1369,7 @@ entries:
       - README.md
       - ChangeLog.YAML
 
-- id: RW-0067
+  - id: RW-0067
     date: "2026-10-28"
     type: frontend
     title: "Add a site-wide Staff Login entry point"
@@ -1429,3 +1431,38 @@ entries:
       - .gitignore
       - README.md
       - ChangeLog.YAML
+
+  - id: RW-0069
+    date: "2026-10-28"
+    type: content
+    title: "Add BMX Freestyle legend rider cards"
+    summary: "Add original RideWire bios and searchable cards for Mark Webb, Harry Main and T.J. Lavin, including a Dirt / Vert filter. Use locally stored, attributed Creative Commons photos for Mark Webb and T.J. Lavin. Leave Harry Main's photo pending a reuse-cleared image."
+    areas:
+      - frontend
+      - content
+      - accessibility
+      - documentation
+    location:
+      site: "RideWire public website"
+      page: "Riders"
+      route: "/Pages/riders.html"
+      component: "Searchable rider cards, discipline filters and rider bio dialog"
+    files:
+      - Pages/riders.html
+      - script.js
+      - styles.css
+      - assets/riders/mark-webb-bmx-worlds-2009.jpg
+      - assets/riders/tj-lavin-2000.jpg
+      - assets/riders/CREDITS.md
+      - ChangeLog.YAML
+
+  - id: RW-0070
+    date: 2026-10-28
+    type: content
+    area: frontend
+    page: Riders
+    summary: Replaced Harry Main's photo placeholder with the portrait supplied by the RideWire owner and documented the asset source.
+    files:
+      - Pages/riders.html
+      - assets/riders/harry-main-user-supplied.jpg
+      - assets/riders/CREDITS.md

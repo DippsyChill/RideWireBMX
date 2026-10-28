@@ -173,11 +173,15 @@ if (riderGrid) {
     "Dennis Enarson": "Dennis Enarson is a versatile American rider whose riding spans street, park and dirt. His early appearance in Writing on the Wall introduced his creative, high-impact style to a wide audience; he went on to become a regular at major contests and a central figure in modern BMX video projects.",
     "Nigel Sylvester": "New York rider Nigel Sylvester brought the city’s street culture and his own expressive style to Writing on the Wall. He later built the GO! film series around riding through cities and meeting people along the way, giving BMX a cinematic travel format with broad cultural reach.",
     "Mike Spinner": "Mike Spinner made a name for himself with technical combinations and fast, inventive trick sequences. A rider in Nike 6.0’s Writing on the Wall, he also competed at events including Dew Tour and the Nike 6.0 BMX Open. His tailwhip riding remains a memorable part of that era.",
-    "Mike Miller": "British rider Mike Miller grew up riding trails in Tadley, Hampshire, then developed into a creative street and park rider. He turned professional after early contest success and became known for laid-back, stylish video parts with Proper and Ride UK. He also placed fifth in Style in the Park at the 2011 Vans Rebel Jam."
+    "Mike Miller": "British rider Mike Miller grew up riding trails in Tadley, Hampshire, then developed into a creative street and park rider. He turned professional after early contest success and became known for laid-back, stylish video parts with Proper and Ride UK. He also placed fifth in Style in the Park at the 2011 Vans Rebel Jam.",
+    "Mark Webb": "Portsmouth rider Mark Webb became known for progressive Park riding, technical combinations and inventive video edits. His Webbie Show edits helped bring his boundary-pushing style to BMX fans well beyond the contest scene.",
+    "Harry Main": "Liverpool-born Harry Main became known for powerful, technical Park riding and widely shared video edits. His competition record includes fifth place at Simple Session 2010 and a top-seven finish at Dew Tour in 2011.",
+    "T.J. Lavin": "Las Vegas rider T.J. Lavin moved from BMX racing into dirt jumping and became one of the discipline's best-known contest riders. His career includes X Games medals, the King of Dirt title and induction into the USA BMX Hall of Fame."
   };
   const riderBioDialog = document.querySelector("#rider-bio-dialog");
   if (riderBioDialog) {
     const bioImage = riderBioDialog.querySelector("[data-rider-bio-image]");
+    const bioPlaceholder = riderBioDialog.querySelector("[data-rider-bio-placeholder]");
     const bioCredit = riderBioDialog.querySelector("[data-rider-bio-credit]");
     const bioName = riderBioDialog.querySelector("[data-rider-bio-name]");
     const bioMeta = riderBioDialog.querySelector("[data-rider-bio-meta]");
@@ -209,8 +213,17 @@ if (riderGrid) {
         bioMeta.textContent = Array.from(meta.children).map((item) => item.textContent).join(" / ");
         bioHighlight.textContent = highlight?.textContent ?? "";
         bioText.textContent = riderBios[name] ?? card.querySelector(".rider-database-copy > p")?.textContent ?? "";
-        bioImage.src = image.src;
-        bioImage.alt = image.alt;
+        bioImage.hidden = !image;
+        if (image) {
+          bioImage.src = image.src;
+          bioImage.alt = image.alt;
+          bioImage.classList.toggle("rider-photo-uncropped", image.classList.contains("rider-photo-uncropped"));
+        } else {
+          bioImage.removeAttribute("src");
+          bioImage.alt = "";
+          bioImage.classList.remove("rider-photo-uncropped");
+        }
+        if (bioPlaceholder) bioPlaceholder.hidden = Boolean(image);
         bioCredit.replaceChildren(...Array.from(credit.childNodes, (node) => node.cloneNode(true)));
 
         bioEvents.replaceChildren();
