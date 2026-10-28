@@ -12,6 +12,24 @@ function httpServer() {
     let pathname;
     try { pathname = decodeURIComponent(new URL(request.url,'http://localhost').pathname); }
     catch { response.writeHead(400).end('Bad request'); return; }
+    const needsPhp = pathname === '/staff' || pathname.startsWith('/staff/') || pathname === '/api' || pathname.startsWith('/api/') || pathname === '/article.php';
+    if (needsPhp) {
+      const upstream = require('node:http').request({
+        hostname: '127.0.0.1', port: 8001, method: request.method, path: request.url,
+        headers: { ...request.headers, host: '127.0.0.1:8001' }
+      }, (upstreamResponse) => {
+        response.writeHead(upstreamResponse.statusCode || 502, upstreamResponse.headers);
+        upstreamResponse.pipe(response);
+      });
+      upstream.on('error', () => {
+        if (!response.headersSent) {
+          response.writeHead(502, {'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store'});
+          response.end('RideWire PHP backend is not running. Start scripts/start-local-backend.ps1, then reload this page.');
+        }
+      });
+      request.pipe(upstream);
+      return;
+    }
     if (pathname === '/') pathname = '/Pages/index.html';
     else if (pathname === '/index.html') pathname = '/Pages/index.html';
     else if (aliases.has(pathname)) { response.writeHead(302,{Location:aliases.get(pathname),'Cache-Control':'no-store'}).end(); return; }

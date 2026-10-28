@@ -17,6 +17,9 @@ if ($driver === 'sqlite') {
     $pdo->exec('CREATE TABLE IF NOT EXISTS rw_staff_users(id INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT NOT NULL UNIQUE,display_name TEXT NOT NULL,password_hash TEXT NOT NULL,role TEXT NOT NULL,permissions TEXT NOT NULL,is_active INTEGER NOT NULL DEFAULT 1,must_change_password INTEGER NOT NULL DEFAULT 1,created_at TEXT NOT NULL,last_login_at TEXT NULL)');
     $pdo->exec('CREATE TABLE IF NOT EXISTS rw_staff_audit(id INTEGER PRIMARY KEY AUTOINCREMENT,actor_id INTEGER NULL,action TEXT NOT NULL,target_id INTEGER NULL,created_at TEXT NOT NULL)');
     $pdo->exec('CREATE TABLE IF NOT EXISTS rw_staff_login_limits(fingerprint TEXT PRIMARY KEY,window_started INTEGER NOT NULL,failures INTEGER NOT NULL DEFAULT 0)');
+    $pdo->exec("CREATE TABLE IF NOT EXISTS rw_content_items(id INTEGER PRIMARY KEY AUTOINCREMENT,section TEXT NOT NULL,slug TEXT NOT NULL UNIQUE,title TEXT NOT NULL,category TEXT NOT NULL DEFAULT '',summary TEXT NOT NULL DEFAULT '',body_html TEXT NOT NULL DEFAULT '',image TEXT NOT NULL DEFAULT '',image_alt TEXT NOT NULL DEFAULT '',image_caption TEXT NOT NULL DEFAULT '',country TEXT NOT NULL DEFAULT '',discipline TEXT NOT NULL DEFAULT '',highlight TEXT NOT NULL DEFAULT '',source_url TEXT NOT NULL DEFAULT '',published_at TEXT NOT NULL DEFAULT '',status TEXT NOT NULL DEFAULT 'draft',sort_order INTEGER NOT NULL DEFAULT 0,created_at TEXT NOT NULL,updated_at TEXT NOT NULL)");
+    $pdo->exec('CREATE INDEX IF NOT EXISTS ix_rw_content_section_status ON rw_content_items(section,status,sort_order)');
+    $pdo->exec('CREATE TABLE IF NOT EXISTS rw_page_views(view_day TEXT NOT NULL,page_path TEXT NOT NULL,view_count INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(view_day,page_path))');
     $nowSql = 'CURRENT_TIMESTAMP';
 } elseif ($driver === 'mysql') {
     $pdo = new PDO('mysql:host=' . $dbConfig['host'] . ';dbname=' . $dbConfig['name'] . ';charset=utf8mb4', $dbConfig['user'], $dbConfig['password'], $options + [PDO::ATTR_EMULATE_PREPARES => false]);
@@ -32,9 +35,10 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 const STAFF_CAPS = [
- 'news.edit'=>'Create and edit News','news.publish'=>'Publish News','news.delete'=>'Delete News',
- 'spotlight.edit'=>'Create and edit Spotlight','spotlight.publish'=>'Publish Spotlight','spotlight.delete'=>'Delete Spotlight',
+ 'news.edit'=>'Create and edit News','news.publish'=>'Publish News','news.delete'=>'Archive News',
+ 'spotlight.edit'=>'Create and edit Spotlight','spotlight.publish'=>'Publish Spotlight','spotlight.delete'=>'Archive Spotlight',
  'videos.edit'=>'Add and edit Videos','videos.publish'=>'Feature Videos','videos.delete'=>'Remove Videos',
+ 'riders.edit'=>'Create and edit Riders','riders.publish'=>'Publish Riders','riders.delete'=>'Archive Riders',
  'site.stats.view'=>'View site statistics','staff.manage'=>'Manage staff accounts'
 ];
 function h(string $s): string { return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }

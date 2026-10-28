@@ -1,6 +1,18 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('#site-nav');
 
+// First-party aggregate page counts only; the endpoint stores day, path and count.
+if (!location.pathname.startsWith('/staff/') && !location.pathname.startsWith('/api/')) {
+  let pagePath = location.pathname;
+  if (location.pathname === '/article.php') {
+    const query = new URLSearchParams(location.search);
+    const section = query.get('section') || '';
+    const slug = query.get('slug') || '';
+    if (/^(news|spotlight|rider)$/.test(section) && /^[a-z0-9-]{1,180}$/.test(slug)) pagePath = `/articles/${section}/${slug}`;
+  }
+  fetch('/api/track.php', { method: 'POST', credentials: 'omit', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ path: pagePath }) }).catch(() => {});
+}
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener('click', () => {
     const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -18,13 +30,14 @@ if (menuToggle && siteNav) {
   });
 }
 
-document.querySelector('#year').textContent = new Date().getFullYear();
+const yearDisplay = document.querySelector('#year');
+if (yearDisplay) yearDisplay.textContent = new Date().getFullYear();
 
 const newsFilterButtons = document.querySelectorAll("[data-news-filter]");
 const newsCategoryCards = document.querySelectorAll("[data-news-category]");
 const updateNewsCardRhythm = () => {
   let visibleIndex = 0;
-  newsCategoryCards.forEach((card) => {
+  document.querySelectorAll("[data-news-category]").forEach((card) => {
     if (card.hidden) {
       card.classList.remove("scene-news-card-featured");
       return;
@@ -36,7 +49,7 @@ const updateNewsCardRhythm = () => {
 newsFilterButtons.forEach((button) => button.addEventListener("click", () => {
   const filter = button.dataset.newsFilter;
   newsFilterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-  newsCategoryCards.forEach((card) => { card.hidden = filter !== "all" && card.dataset.newsCategory !== filter; });
+  document.querySelectorAll("[data-news-category]").forEach((card) => { card.hidden = filter !== "all" && card.dataset.newsCategory !== filter; });
   updateNewsCardRhythm();
 }));
 updateNewsCardRhythm();
@@ -123,9 +136,10 @@ if (riderGrid) {
   let activeRiderFilter = "all";
 
   const updateRiderCards = () => {
-    const query = riderSearch.value.trim().toLowerCase();
+    const query = (riderSearch?.value ?? "").trim().toLowerCase();
     let visibleCount = 0;
-    riderCards.forEach((card) => {
+    const liveCards = Array.from(riderGrid.querySelectorAll("[data-discipline]"));
+    liveCards.forEach((card) => {
       const matchesDiscipline = activeRiderFilter === "all" || card.dataset.discipline === activeRiderFilter;
       const matchesQuery = !query || card.dataset.search.includes(query);
       const visible = matchesDiscipline && matchesQuery;
@@ -133,7 +147,7 @@ if (riderGrid) {
       if (visible) visibleCount += 1;
     });
     riderResults.textContent = `Showing ${visibleCount} rider ${visibleCount === 1 ? "profile" : "profiles"}`;
-    riderEmpty.hidden = visibleCount !== 0;
+    if (riderEmpty) riderEmpty.hidden = visibleCount !== 0;
   };
 
   riderSearch?.addEventListener("input", updateRiderCards);

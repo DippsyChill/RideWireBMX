@@ -623,3 +623,6 @@ em { color: #e50914; font-style: normal; }
   .home-archive-feature > img { min-height: 255px; max-height: 340px; }
   .home-archive-feature .news-feature-copy { padding: 26px 22px; }
 }
+.site-footer .footer-staff-login { display: inline-block; padding: 8px 0; color: #d5d5d0; font-size: 10px; line-height: 1.5; text-decoration: none; transition: color .2s ease; }
+.site-footer .footer-staff-login:hover, .site-footer .footer-staff-login:focus-visible { color: var(--lime); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .site-footer .footer-staff-login { order: 5; } }

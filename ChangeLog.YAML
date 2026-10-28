@@ -1366,3 +1366,66 @@ entries:
       - .gitignore
       - README.md
       - ChangeLog.YAML
+
+- id: RW-0067
+    date: "2026-10-28"
+    type: frontend
+    title: "Add a site-wide Staff Login entry point"
+    summary: "Label the Admin/Editor portal Staff Login and add a small footer link on public pages and articles. The link opens the existing protected staff route; no visitor account flow is added."
+    areas:
+      - frontend
+      - navigation
+      - backend-integration
+    location:
+      site: "Public website and staff portal"
+      page: "Shared footers and Staff Login"
+      route: "/staff/"
+      component: "Footer entry link and login heading"
+    files:
+      - Pages/
+      - articles/news/
+      - articles/spotlight/
+      - staff/index.php
+      - styles.css
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0068
+    date: "2026-10-28"
+    type: feature
+    title: "Add the staff dashboard, content editors and aggregate statistics"
+    summary: "Create a dashboard-first staff area with permission-gated News, Spotlight and Rider editors, a visual writing toolbar and PC image uploads, reversible archiving, public database-backed articles, first-party aggregate page counts with responsive SVG charts, and a local static-preview proxy for PHP routes. Import current static content into SQLite locally or MariaDB on IONOS."
+    areas:
+      - frontend
+      - backend
+      - security
+      - local-development
+      - documentation
+    location:
+      site: "RideWire public website and staff portal"
+      page: "Dashboard, Statistics, News, Spotlight, Riders and article detail"
+      route: "/staff/ and /article.php"
+      component: "Capability-gated editors, publish/draft/archive workflow, public content feed, article rendering and aggregate page views"
+      service: "PHP with SQLite locally and MariaDB on IONOS"
+    files:
+      - staff/
+      - private/content-store.php
+      - api/
+      - article.php
+      - article-content.css
+      - content-render.js
+      - staff/editor-view.php
+      - staff/editor.css
+      - staff/editor.js
+      - staff/upload-image.php
+      - bin/import-static-content.php
+      - database/staff-schema.sql
+      - Pages/news.html
+      - Pages/spotlight.html
+      - Pages/riders.html
+      - script.js
+      - preview-server.js
+      - scripts/start-local-backend.ps1
+      - .gitignore
+      - README.md
+      - ChangeLog.YAML

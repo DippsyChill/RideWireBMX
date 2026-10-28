@@ -1,3 +1,4 @@
 # Private IONOS database config and local-only files
 /private/config.php
 /data/*.sqlite
+/assets/uploads/*.webp
