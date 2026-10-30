@@ -1591,3 +1591,23 @@ entries:
       - Pages/*.html
       - articles/**/*.html
       - ChangeLog.YAML
+
+  - id: RW-0076
+    date: "2026-10-30"
+    type: content
+    title: "Add RideWire contact email to About page and footers"
+    summary: "Add a contact section on the About page for general enquiries, story ideas, rider suggestions, corrections and collaboration, and a mail link in public page footers."
+    areas:
+      - frontend
+      - content
+      - accessibility
+    location:
+      site: "RideWire public website"
+      page: "About and all public pages"
+      route: "/Pages/about.html"
+      component: "Contact section and footer navigation"
+    files:
+      - Pages/about.html
+      - Pages/*.html
+      - articles/**/*.html
+      - ChangeLog.YAML
