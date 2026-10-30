@@ -1466,3 +1466,123 @@ entries:
       - Pages/riders.html
       - assets/riders/harry-main-user-supplied.jpg
       - assets/riders/CREDITS.md
+
+  - id: RW-0071
+    date: "2026-10-30"
+    type: launch-preparation
+    title: "Prepare RideWire public launch files"
+    summary: "Add root Apache access hardening, upload-folder PHP execution protection, a branded 404 page, canonical URLs for public HTML, robots.txt and an XML sitemap for ridewirebmx.com. HTTPS and hostname redirects remain unset pending live domain and certificate verification."
+    areas:
+      - frontend
+      - hosting
+      - security
+      - SEO
+    location:
+      site: "RideWire public website"
+      page: "Site-wide"
+      route: "/"
+      component: "Apache access rules, error page, crawler instructions and sitemap"
+    files:
+      - .htaccess
+      - assets/uploads/.htaccess
+      - 404.html
+      - robots.txt
+      - sitemap.xml
+      - index.html
+      - Pages/*.html
+      - articles/**/*.html
+      - preview-server.js
+      - ChangeLog.YAML
+
+  - id: RW-0072
+    date: "2026-10-30"
+    type: launch-scope
+    title: "Archive Staff backend for frontend-only launch"
+    summary: "Move PHP portal, database tools, backend content rendering, and upload protections under archive/backend. Remove Staff Login links and backend script references from public pages; update the local preview and docs to serve a static frontend only. The ignored local private/config.php remains protected in place and was not read or moved."
+    areas:
+      - frontend
+      - hosting
+      - backend-archive
+    location:
+      site: "RideWire public website"
+      page: "Site-wide"
+      route: "/"
+      component: "Frontend-only launch package"
+    files:
+      - archive/backend/**
+      - Pages/*.html
+      - articles/**/*.html
+      - styles.css
+      - preview-server.js
+      - README.md
+      - ChangeLog.YAML
+
+  - id: RW-0073
+    date: "2026-10-30"
+    type: content-archive
+    title: "Shelf the Portimão BMX history story"
+    summary: "Move the unfinished Portimão park history feature and its eight draft-only photos out of public content and into archive. Remove its homepage, News, About and sitemap placements, trim duplicated history content from the separate Portuguese circuit return report, and renumber the homepage sections."
+    areas:
+      - frontend
+      - content
+      - archive
+    location:
+      site: "RideWire public website"
+      page: "Home, News, About and Portimão history feature"
+      route: "/archive/portimao-bmx-park-history.html"
+      component: "Archived article and public cross-links"
+    files:
+      - archive/portimao-bmx-park-history.html
+      - archive/portimao-history-assets/**
+      - Pages/index.html
+      - Pages/news.html
+      - Pages/about.html
+      - articles/news/news-portugal-bmx-freestyle-returns-2026.html
+      - sitemap.xml
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0074
+    date: "2026-10-30"
+    type: bugfix
+    title: "Respect hidden state for rider photo placeholders"
+    summary: "The rider bio modal set the no-photo placeholder hidden when a card had an image, but placeholder display styling overrode the hidden attribute. Add a more specific hidden-state rule so rider photos display in the modal."
+    areas:
+      - frontend
+      - riders
+      - accessibility
+    location:
+      site: "RideWire public website"
+      page: "Riders"
+      route: "/Pages/riders.html"
+      component: "Rider bio modal photo"
+    files:
+      - styles.css
+      - ChangeLog.YAML
+
+  - id: RW-0075
+    date: "2026-10-30"
+    type: performance
+    title: "Compress large photos and defer below-the-fold images"
+    summary: "Add compressed, resized copies and responsive 960-pixel variants for the homepage hero and two large FISE photos, a compact transparent logo and a compressed Lucas Silva spotlight image, while keeping originals. Prioritize the hero and lazy-load other public images with asynchronous decoding."
+    areas:
+      - frontend
+      - performance
+      - mobile
+    location:
+      site: "RideWire public website"
+      page: "Home, News, Spotlight, Riders and article pages"
+      route: "/"
+      component: "Photo assets and image loading"
+    files:
+      - assets/ridewire-hero-optimized.jpg
+      - assets/ridewire-hero-optimized-960.jpg
+      - assets/ridewire-logo-v5-optimized.png
+      - assets/news/fise-montpellier-park-2026-optimized.jpg
+      - assets/news/fise-montpellier-park-2026-optimized-960.jpg
+      - assets/news/fise-shanghai-women-2026-optimized.jpg
+      - assets/news/fise-shanghai-women-2026-optimized-960.jpg
+      - assets/spotlight-rider-optimized.jpg
+      - Pages/*.html
+      - articles/**/*.html
+      - ChangeLog.YAML

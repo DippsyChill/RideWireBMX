@@ -1,0 +1,11 @@
+ErrorDocument 404 /404.html
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(?:private|database|bin|scripts|archive|\.codex-checkpoints|\.git|articles/drafts)(?:/|$) - [F,L,NC]
+</IfModule>
+
+<FilesMatch "(?i)(^\.|\.md$|\.ya?ml$|\.sql$|\.sqlite(?:3)?$|\.db$|\.log$|\.bak$|\.env$)">
+  Require all denied
+</FilesMatch>

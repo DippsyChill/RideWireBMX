@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /staff/
+Disallow: /api/
+Disallow: /private/
+Disallow: /database/
+Disallow: /bin/
+Disallow: /scripts/
+Disallow: /archive/
+Disallow: /.git/
+Disallow: /.codex-checkpoints/
+Disallow: /articles/drafts/
+Sitemap: https://ridewirebmx.com/sitemap.xml
